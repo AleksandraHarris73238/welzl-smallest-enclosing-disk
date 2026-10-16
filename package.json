@@ -1,6 +1,6 @@
 {
   "name": "welzl-smallest-enclosing-disk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Finds the smallest enclosing circle for a set of 2D points via Welzl's randomized algorithm.",
   "type": "module",
   "main": "src/index.js",
