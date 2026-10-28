@@ -24,3 +24,10 @@ This library is a single dependency-free ESM module. It shuffles once, recurses,
 - **Collinear boundary triples** can arise during recursion when three points are nearly on a line. The circumscribed circle is undefined there, so the code falls back to the smallest two-point disk spanning the farthest pair. The three-point determinant is rejected when its magnitude drops below `1e-12` to avoid dividing by noise.
 
 Points are `[x, y]` pairs of finite numbers. Anything else throws a `TypeError`.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
